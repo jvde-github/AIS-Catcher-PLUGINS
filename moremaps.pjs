@@ -47,3 +47,56 @@ addTileLayer("Jawg_Matrix", L.tileLayer('https://{s}.tile.jawg.io/jawg-matrix/{z
 	subdomains: 'abcd',
 	accessToken: '<your accessToken>'
 }));
+
+addTileLayer("googleStreets", L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+}));
+
+
+addTileLayer("googleSattelite", L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+}));
+addTileLayer("googleTerrain", L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+}));
+
+addTileLayer("Mapbox", L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', { 
+	attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> | <a href="https://www.openstreetmap.org/about/">OpenStreetMap</a>',
+	maxZoom: 18,
+	id: 'mapbox/streets-v11',
+	tileSize: 512,
+	zoomOffset: -1,
+	accessToken: 'your.mapbox.access.token'}));
+
+addTileLayer("OpenTopoMap", L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { 
+	attribution: 'Map data © OpenStreetMap contributors, SRTM | Map style © OpenTopoMap (CC-BY-SA)'}));
+
+addTileLayer("CartoDB", L.tileLayer('https://{s}.basemaps.cartocdn.com/{variant}/{z}/{x}/{y}.png', { 
+	attribution: '© <a href="https://carto.com/">CARTO</a>',
+	maxZoom: 18,
+	variant: 'rastertiles/voyager_nolabels_under'}));
+
+addTileLayer("World_Street_Map", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri'}));
+
+addTileLayer("World_Imagery", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri'}));
+
+addTileLayer("World_Terrain_Base", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri | Source: USGS, Esri, TANA, DeLorme, and NPS'}));
+	
+addTileLayer("World_Topo_Map", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri'}));
+	
+addTileLayer("World_Shaded_Relief", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri | Sources: USGS, Esri'}));
+	
+addTileLayer("World_Hillshade", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Hillshade/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri | Sources: USGS, Esri'}));
+
+addTileLayer("World_Physical_Map", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', { 
+	attribution: 'Tiles &copy; Esri | Sources: US National Park Service, Esri, HERE, Garmin, INCREMENT P, METI/NASA Japan, EPA, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'}));
+
