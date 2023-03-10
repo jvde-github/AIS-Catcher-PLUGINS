@@ -1,0 +1,11 @@
+// {"author":"jvde-github","description":"add option to look up vessel name in Google"}
+
+
+function openGoogleSearch() {
+        if(card_mmsi in shipsDB) {
+                let ship = shipsDB[card_mmsi].raw;
+                window.open("https://www.google.com/search?q=" + (ship.shipname?ship.shipname:ship.mmsi));
+        }
+}
+
+addShipcardItem('fa brands fa-google','Google','Lookup vessel name in Google','openGoogleSearch()');
