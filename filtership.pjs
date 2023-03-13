@@ -1,0 +1,7 @@
+// {"author":"jvde-github","description":"filter out ships that are too far away"}
+
+function includeShip(ship) {
+
+        if(ship.hasOwnProperty('distance') && ship.distance && ship.distance > 1000) return false;
+        return true;
+}
