@@ -1,0 +1,10 @@
+:root {
+
+	--range-color: purple;
+	--range-short-color: red;
+}
+
+.dark {
+	--range-color: orange;
+	--range-short-color: pink;
+}
