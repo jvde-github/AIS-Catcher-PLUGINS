@@ -18,7 +18,7 @@ addTileLayer("Stamen Watercolor", L.tileLayer('https://watercolormaps.collection
 	ext: 'jpg'
 }));
 
-addTileLayer("Stamen Toner Lite",  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.{ext}?api_key={stadiakey}', {
+addTileLayer("Stamen Toner Lite", L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.{ext}?api_key={stadiakey}', {
 	attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> contributors', 
 	subdomains: 'abcd',
 	minZoom: 0,
@@ -64,7 +64,6 @@ addTileLayer("Google Streets", L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x
     maxZoom: 20,
     subdomains:['mt0','mt1','mt2','mt3']
 }));
-
 
 addTileLayer("Google Satellite", L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 20,
@@ -121,4 +120,16 @@ addTileLayer("NatGeo World Map", L.tileLayer('https://server.arcgisonline.com/Ar
 
 addTileLayer("World Physical Map", L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', { 
 	attribution: 'Tiles &copy; Esri | Sources: US National Park Service, Esri, HERE, Garmin, INCREMENT P, METI/NASA Japan, EPA, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}));
+
+addOverlayLayer("OpenSeaMap", L.tileLayer("http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png", {
+	attribution: 'Map data: &copy; <a href="http://www.openseamap.org">OSM</a>', 
+	maxZoom: 18 
+}));
+
+addOverlayLayer("NOAA", L.tileLayer.wms("https://gis.charttools.noaa.gov/arcgis/rest/services/MCS/ENCOnline/MapServer/exts/MaritimeChartService/WMSServer?", {
+	layers: "1,2,3,4,5,6,7",
+	format: "image/png",
+	transparent: true,
+	version: "1.3.0"
 }));
