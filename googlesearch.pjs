@@ -1,4 +1,4 @@
-// {"author":"jvde-github","description":"add option to look up vessel name in Google"}
+// {"author":"jvde-github","version": 2, "description":"add option to look up vessel name in Google"}
 
 
 function openGoogleSearch() {

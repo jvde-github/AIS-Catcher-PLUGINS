@@ -1,4 +1,4 @@
-// {"author":"jvde-github","description":"use maps without labels"}
+// {"author":"jvde-github","version": 2, "description":"use maps without labels"}
 
 removeTileLayerAll();
 removeOverlayLayerAll();

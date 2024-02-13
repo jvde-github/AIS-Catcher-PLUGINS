@@ -1,4 +1,4 @@
-// {"author":"jvde-github","description":"filter out ships that are too far away"}
+// {"author":"jvde-github","version": 2, "description":"filter out ships that are too far away"}
 
 function includeShip(ship) {
 

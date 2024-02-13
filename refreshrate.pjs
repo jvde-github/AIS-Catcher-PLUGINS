@@ -1,1 +1,3 @@
+// {"author":"jvde-github","version": 2, "description":"set browser refresh rate to 5s"}
+
 refreshIntervalMs = 5000;

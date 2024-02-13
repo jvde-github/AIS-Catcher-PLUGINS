@@ -1,3 +1,5 @@
+// {"author":"jvde-github","version": 2, "description":"overriding shipnames"}
+
 const shipNames = { 2442006: {name:"Lighthouse",callsign:"CG1212"}, 244770939: {name:"VTS"} };
 
 function getShipName(ship) { return (ship.mmsi in shipNames && shipNames[ship.mmsi].hasOwnProperty("name")) ? shipNames[ship.mmsi].name : ship.shipname; }
