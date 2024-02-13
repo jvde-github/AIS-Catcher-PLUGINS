@@ -113,3 +113,23 @@ addTileLayer("World_Physical_Map", new ol.layer.Tile({
         attributions: 'Tiles © Esri | Sources: US National Park Service, Esri, HERE, Garmin, INCREMENT P, METI/NASA Japan, EPA, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     })
 }));
+
+addOverlayLayer("OpenSeaMap", new ol.layer.Tile({
+    source: new ol.source.XYZ({
+        url: 'http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+        attributions: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a>'
+    })
+}));
+
+addOverlayLayer("NOAA", new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+        url: 'https://gis.charttools.noaa.gov/arcgis/rest/services/MCS/ENCOnline/MapServer/exts/MaritimeChartService/WMSServer?',
+        params: {
+            'LAYERS': '1,2,3,4,5,6,7',
+            'FORMAT': 'image/png',
+            'TRANSPARENT': 'true',
+            'VERSION': '1.3.0'
+        },
+        serverType: 'geoserver'
+    })
+}));
