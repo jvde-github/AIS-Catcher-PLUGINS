@@ -1,3 +1,5 @@
-// {"author":"jvde-github","version": 3, "description":"filter out ships that are too far away"}
+// {"author":"jvde-github","version": 5, "description":"filter out ships that are too far away"}
 
-window.includeShip = ship => !(ship.hasOwnProperty('distance') && ship.distance > 1000);
+if (typeof AISCatcher !== 'undefined' && AISCatcher.PLUGIN_API_VERSION >= 5) {
+    AISCatcher.setShipFilter((ship) => !(ship.distance > 1000));
+}

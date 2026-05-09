@@ -1,18 +1,12 @@
-// {"author":"jvde-github","version": 3, "description":"overriding shipnames"}
+// {"author":"jvde-github","version": 5, "description":"overriding shipnames"}
 
-var shipNames = {
-	2442006: { name: "Lighthouse", callsign: "CG1212" },
-	244770939: { name: "VTS" }
-};
+if (typeof AISCatcher !== 'undefined' && AISCatcher.PLUGIN_API_VERSION >= 5) {
+    const shipNames = {
+        2442006: { name: "Lighthouse", callsign: "CG1212" },
+        244770939: { name: "VTS" }
+    };
 
-// Overwrite global getShipName
-window.getShipName = (ship) =>
-	(ship.mmsi in shipNames && shipNames[ship.mmsi].hasOwnProperty("name"))
-    	? shipNames[ship.mmsi].name
-    	: ship.shipname;
-
-// Overwrite global getCallSign
-window.getCallSign = (ship) =>
-	(ship.mmsi in shipNames && shipNames[ship.mmsi].hasOwnProperty("callsign"))
-    	? shipNames[ship.mmsi].callsign
-    	: ship.callsign;
+    // Returning null/undefined falls through to ship.shipname / ship.callsign.
+    AISCatcher.setShipNameProvider((ship) => shipNames[ship.mmsi]?.name);
+    AISCatcher.setCallSignProvider((ship) => shipNames[ship.mmsi]?.callsign);
+}

@@ -1,3 +1,5 @@
-// {"author":"jvde-github","version": 3, "description":"set browser refresh rate to 5s"}
+// {"author":"jvde-github","version": 5, "description":"set browser refresh rate to 5s"}
 
-window.refreshIntervalMs = 5000;
+if (typeof AISCatcher !== 'undefined' && AISCatcher.PLUGIN_API_VERSION >= 5) {
+    AISCatcher.setRefreshInterval(5000);
+}

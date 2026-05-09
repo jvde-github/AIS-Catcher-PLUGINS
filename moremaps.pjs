@@ -1,135 +1,128 @@
-// {"author":"GosportXplorer","version": 3, "description":"more maps"}
+// {"author":"GosportXplorer","version": 5, "description":"more maps"}
 // Reworked by dziban303
 
-removeTileLayerAll();
-removeOverlayLayerAll();
+if (typeof AISCatcher !== 'undefined' && AISCatcher.PLUGIN_API_VERSION >= 5) {
+    AISCatcher.removeTileLayerAll();
+    AISCatcher.removeOverlayLayerAll();
 
-addTileLayer("OpenStreetMap", new ol.layer.Tile({
-    source: new ol.source.OSM(),
-    maxZoom: 19
-}));
+    AISCatcher.addTileLayer("OpenStreetMap", new ol.layer.Tile({
+        source: new ol.source.OSM(),
+        maxZoom: 19
+    }));
 
-addTileLayer("Voyager",new  ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://{a-c}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-        attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 20
-    })
-}));
+    AISCatcher.addTileLayer("Voyager", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://{a-c}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
+            attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            maxZoom: 20
+        })
+    }));
 
-addTileLayer("StamenWatercolour",  new  ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://stamen-tiles-{a-d}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
-        attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stamen.com">Stamen Design</a>',
-        maxZoom: 16
-    })
-}));
+    AISCatcher.addTileLayer("StamenWatercolour", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://stamen-tiles-{a-d}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
+            attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stamen.com">Stamen Design</a>',
+            maxZoom: 16
+        })
+    }));
 
-addTileLayer("StamenTonerLite", new  ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://stamen-tiles-{a-d}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png',
-        attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stamen.com">Stamen Design</a>',
-        maxZoom: 20
-    })
-}));
+    AISCatcher.addTileLayer("StamenTonerLite", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://stamen-tiles-{a-d}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png',
+            attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://stamen.com">Stamen Design</a>',
+            maxZoom: 20
+        })
+    }));
 
-addTileLayer("DarkMatter", new  ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-        attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 20
-    })
-}));
+    AISCatcher.addTileLayer("DarkMatter", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+            attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            maxZoom: 20
+        })
+    }));
 
-// OpenTopoMap
-addTileLayer("OpenTopoMap", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
-        attributions: 'Map data © OpenStreetMap contributors, SRTM | Map style © OpenTopoMap (CC-BY-SA)'
-    })
-}));
+    AISCatcher.addTileLayer("OpenTopoMap", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png',
+            attributions: 'Map data © OpenStreetMap contributors, SRTM | Map style © OpenTopoMap (CC-BY-SA)'
+        })
+    }));
 
-// CartoDB (Voyager No Labels Under)
-addTileLayer("CartoDB", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels_under/{z}/{x}/{y}.png',
-        attributions: '© <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 18
-    })
-}));
+    AISCatcher.addTileLayer("CartoDB", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels_under/{z}/{x}/{y}.png',
+            attributions: '© <a href="https://carto.com/">CARTO</a>',
+            maxZoom: 18
+        })
+    }));
 
-// World Street Map (Esri)
-addTileLayer("World_Street_Map", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri'
-    })
-}));
+    AISCatcher.addTileLayer("World_Street_Map", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri'
+        })
+    }));
 
-// World Imagery (Esri)
-addTileLayer("World_Imagery", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri'
-    })
-}));
+    AISCatcher.addTileLayer("World_Imagery", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri'
+        })
+    }));
 
-// World Terrain Base (Esri)
-addTileLayer("World_Terrain_Base", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri | Source: USGS, Esri, TANA, DeLorme, and NPS'
-    })
-}));
+    AISCatcher.addTileLayer("World_Terrain_Base", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri | Source: USGS, Esri, TANA, DeLorme, and NPS'
+        })
+    }));
 
-// World Topo Map (Esri)
-addTileLayer("World_Topo_Map", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri'
-    })
-}));
+    AISCatcher.addTileLayer("World_Topo_Map", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri'
+        })
+    }));
 
-// World Shaded Relief (Esri)
-addTileLayer("World_Shaded_Relief", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri | Sources: USGS, Esri'
-    })
-}));
+    AISCatcher.addTileLayer("World_Shaded_Relief", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri | Sources: USGS, Esri'
+        })
+    }));
 
-// World Hillshade (Esri)
-addTileLayer("World_Hillshade", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Hillshade/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri | Sources: USGS, Esri'
-    })
-}));
+    AISCatcher.addTileLayer("World_Hillshade", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Hillshade/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri | Sources: USGS, Esri'
+        })
+    }));
 
-// World Physical Map (Esri)
-addTileLayer("World_Physical_Map", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
-        attributions: 'Tiles © Esri | Sources: US National Park Service, Esri, HERE, Garmin, INCREMENT P, METI/NASA Japan, EPA, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    })
-}));
+    AISCatcher.addTileLayer("World_Physical_Map", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri | Sources: US National Park Service, Esri, HERE, Garmin, INCREMENT P, METI/NASA Japan, EPA, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        })
+    }));
 
-addOverlayLayer("OpenSeaMap", new ol.layer.Tile({
-    source: new ol.source.XYZ({
-        url: 'http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
-        attributions: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a>'
-    })
-}));
+    AISCatcher.addOverlayLayer("OpenSeaMap", new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
+            attributions: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a>'
+        })
+    }));
 
-addOverlayLayer("NOAA", new ol.layer.Tile({
-    source: new ol.source.TileWMS({
-        url: 'https://gis.charttools.noaa.gov/arcgis/rest/services/MCS/ENCOnline/MapServer/exts/MaritimeChartService/WMSServer?',
-        params: {
-            'LAYERS': '1,2,3,4,5,6,7',
-            'FORMAT': 'image/png',
-            'TRANSPARENT': 'true',
-            'VERSION': '1.3.0'
-        },
-        serverType: 'geoserver'
-    })
-}));
+    AISCatcher.addOverlayLayer("NOAA", new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+            url: 'https://gis.charttools.noaa.gov/arcgis/rest/services/MCS/ENCOnline/MapServer/exts/MaritimeChartService/WMSServer?',
+            params: {
+                'LAYERS': '1,2,3,4,5,6,7',
+                'FORMAT': 'image/png',
+                'TRANSPARENT': 'true',
+                'VERSION': '1.3.0'
+            },
+            serverType: 'geoserver'
+        })
+    }));
+}
